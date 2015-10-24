@@ -3,7 +3,7 @@
  * @package _mbbasetheme
  */
 ?>
-
+<pre><?=__FILE__ . ' BEGIN'?></pre>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
@@ -25,7 +25,7 @@
 		?>
 	</div><!-- .entry-content -->
 
-	<footer class="entry-footer">
+	<footer class="entry-footer">test
 		<?php if ( 'post' == get_post_type() ) : // Hide category and tag text for pages on Search ?>
 			<?php
 				/* translators: used between list items, there is a space after the comma */
@@ -48,10 +48,9 @@
 			<?php endif; // End if $tags_list ?>
 		<?php endif; // End if 'post' == get_post_type() ?>
 
-		<?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
-		<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', '_mbbasetheme' ), __( '1 Comment', '_mbbasetheme' ), __( '% Comments', '_mbbasetheme' ) ); ?></span>
-		<?php endif; ?>
+		<?php comments_template() ?>
 
 		<?php edit_post_link( __( 'Edit', '_mbbasetheme' ), '<span class="edit-link">', '</span>' ); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
+<pre><?=__FILE__ . ' END'?></pre>

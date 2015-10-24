@@ -18,23 +18,18 @@
 </head>
 
 <body <?php body_class(); ?>>
-<div id="page" class="hfeed site">
-	<!--[if lt IE 9]>
-	    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-	<![endif]-->
+<div class="container">
+    <header>
+        <div class="site-branding" class="row">
+            <div class="twelve columns">
+                <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+                <h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+            </div>
+        </div>
 
-	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', '_mbbasetheme' ); ?></a>
+        <nav id="site-navigation" class="main-navigation" role="navigation" class="row">
+            <!--button class="menu-toggle"><?php _e( 'Primary Menu', '_mbbasetheme' ); ?></button-->
 
-	<header id="masthead" class="site-header" role="banner">
-		<div class="site-branding">
-			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-		</div>
-
-		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<button class="menu-toggle"><?php _e( 'Primary Menu', '_mbbasetheme' ); ?></button>
-			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
-
-	<div id="content" class="site-content">
+            <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+        </nav>
+    </header>
